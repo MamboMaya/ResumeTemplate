@@ -10,7 +10,7 @@
     "build:html": "pug pug/index.pug -o ./",
     "build": "npm-run-all build:css build:html",
     "watch": "onchange 'pug/*.pug' 'assets/css/**/*.{sass,scss}' -- npm run build",
-    "deploy": "npm run build; git add .; git commit -am \"adding new build\"; git checkout gh-pages; git push origin --all; git checkout master; opn https://mambomaya.github.io/ResumeTemplate/;"
+    "deploy": "npm run build && git add . && git commit -am \"adding new build\" && git checkout gh-pages && git push origin --all && git checkout master && opn https://mambomaya.github.io/ResumeTemplate/;"
   },
   "repository": {
     "type": "git",

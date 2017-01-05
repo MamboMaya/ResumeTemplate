@@ -9,7 +9,8 @@
     "build:css": "node-sass --output-style compressed assets/css/main.sass | postcss -u autoprefixer -o assets/css/main.css",
     "build:html": "pug pug/index.pug -o ./",
     "build": "npm-run-all build:css build:html",
-    "watch": "onchange 'pug/*.pug' 'assets/css/**/*.{sass,scss}' -- npm run build"
+    "watch": "onchange 'pug/*.pug' 'assets/css/**/*.{sass,scss}' -- npm run build",
+    "deploy": "npm run build; git add .; git commit -am \"adding new build\"; git checkout gh-pages; git push origin --all; git checkout master; opn https://mambomaya.github.io/ResumeTemplate/;"
   },
   "repository": {
     "type": "git",
@@ -37,5 +38,8 @@
     "postcss-cli": "^2.6.0",
     "pug": "^2.0.0-beta6",
     "pug-cli": "^1.0.0-alpha6"
+  },
+  "dependencies": {
+    "opn-cli": "^3.1.0"
   }
 }
